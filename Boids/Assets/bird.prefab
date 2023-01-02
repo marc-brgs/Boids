@@ -457,6 +457,7 @@ GameObject:
   - component: {fileID: 7612245770889092613}
   - component: {fileID: 2436945226090780104}
   - component: {fileID: 8137745273115212027}
+  - component: {fileID: -4320124398513077695}
   m_Layer: 0
   m_Name: bird
   m_TagString: Untagged
@@ -507,10 +508,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6153c47f1c5bf4ebb0d3aab738b2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusCohesion: 5
-  radiusAlignment: 5
+  radiusCohesion: 2
+  radiusAlignment: 2
   radiusMagnetism: 0.5
   repulsionForce: 1
+--- !u!114 &-4320124398513077695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7129182399922963647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f109bbbda76414389a8d4f33ce41da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 5
+  boundaryForce: 0.5
 --- !u!1 &7675612976372909780
 GameObject:
   m_ObjectHideFlags: 0
