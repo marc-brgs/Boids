@@ -508,9 +508,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6153c47f1c5bf4ebb0d3aab738b2d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radiusCohesion: 2
-  radiusAlignment: 2
-  radiusMagnetism: 0.5
+  radiusCohesion: 0.5
+  radiusAlignment: 1
+  radiusMagnetism: 0.4
   repulsionForce: 1
 --- !u!114 &-4320124398513077695
 MonoBehaviour:
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2f109bbbda76414389a8d4f33ce41da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  radius: 7
   boundaryForce: 0.5
 --- !u!1 &7675612976372909780
 GameObject:
