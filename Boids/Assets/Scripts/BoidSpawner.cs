@@ -4,24 +4,15 @@ using UnityEngine;
 
 public class BoidSpawner : MonoBehaviour
 {
-    public GameObject prefab;
-
-    public float radius;
-
-    public int number;
+    public GameObject prefab; // Boid prefab
+    public float radius; // Spawn radius limit
+    public int number; // Number of boids to instantiate
     
-    // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < number; ++i)
+        for (int i = 0; i < number; i++)
         {
             Instantiate(prefab, this.transform.position + Random.insideUnitSphere * radius, Random.rotation);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

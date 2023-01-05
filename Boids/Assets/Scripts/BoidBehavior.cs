@@ -28,48 +28,52 @@ public class BoidBehavior : MonoBehaviour
         Vector3 averageCohesion = Vector3.zero;
         Vector3 averageAlignment = Vector3.zero;
         Vector3 averageMagnetism = Vector3.zero;
-        var foundCohesion = 0;
-        var foundAlignment = 0;
-        var foundMagnetism = 0;
-
+        int foundCohesion = 0;
+        int foundAlignment = 0;
+        int foundMagnetism = 0;
+        
+        // Rules detection
         foreach (var boid in boids.Where(b => b != boid))
         {
             var diff = boid.transform.position - this.transform.position;
             
-            // Cohesion
+            // Cohesion detection
             if (diff.magnitude < radiusCohesion)
             {
                 averageCohesion += diff;
                 foundCohesion += 1;
             }
             
-            // Alignment
+            // Alignment detection
             if (diff.magnitude < radiusAlignment)
             {
                 averageAlignment += boid.velocity;
                 foundAlignment += 1;
             }
             
-            // Magnetism
+            // Magnetism detection
             if (diff.magnitude < radiusMagnetism)
             {
                 averageMagnetism += diff;
                 foundMagnetism += 1;
             }
         }
-
+        
+        // Cohesion interaction compute
         if (foundCohesion > 0)
         {
             averageCohesion = averageCohesion / foundCohesion;
             boid.velocity += Vector3.Lerp(Vector3.zero, averageCohesion, averageCohesion.magnitude);
         }
-
+        
+        // Alignment interaction compute
         if (foundAlignment > 0)
         {
             averageAlignment = averageAlignment / foundAlignment;
             boid.velocity += Vector3.Lerp(boid.velocity, averageAlignment, Time.deltaTime);
         }
-
+        
+        // Magnetism interaction compute
         if (foundMagnetism > 0)
         {
             averageMagnetism = averageMagnetism / foundMagnetism;

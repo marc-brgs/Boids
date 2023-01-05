@@ -10,12 +10,13 @@ public class Boid : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        velocity = this.transform.forward * maxVelocity;
+        velocity = this.transform.forward * maxVelocity; // Initial speed
     }
 
     // Update is called once per frame
     void Update()
     {
+        // Limit speed
         if (velocity.magnitude > maxVelocity)
         {
             velocity = velocity.normalized * maxVelocity;
