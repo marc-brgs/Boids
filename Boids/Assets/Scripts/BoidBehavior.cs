@@ -12,20 +12,22 @@ public class BoidBehavior : MonoBehaviour
     public float radiusAlignment;
     public float radiusMagnetism;
     public float repulsionForce;
+
+    private Boid[] boids;
     
     // Start is called before the first frame update
     void Start()
     {
         boid = GetComponent<Boid>();
+        boids = FindObjectsOfType<Boid>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var boids = FindObjectsOfType<Boid>();
-        var averageCohesion = Vector3.zero;
-        var averageAlignment = Vector3.zero;
-        var averageMagnetism = Vector3.zero;
+        Vector3 averageCohesion = Vector3.zero;
+        Vector3 averageAlignment = Vector3.zero;
+        Vector3 averageMagnetism = Vector3.zero;
         var foundCohesion = 0;
         var foundAlignment = 0;
         var foundMagnetism = 0;
